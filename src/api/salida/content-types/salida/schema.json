@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "salidas",
+  "info": {
+    "singularName": "salida",
+    "pluralName": "salidas",
+    "displayName": "salida",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha": {
+      "type": "date"
+    },
+    "cantidad": {
+      "type": "integer"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "inversedBy": "salidas"
+    }
+  }
+}

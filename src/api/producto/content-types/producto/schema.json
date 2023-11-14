@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "singularName": "producto",
+    "pluralName": "productos",
+    "displayName": "producto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo_barras": {
+      "type": "text",
+      "required": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "string",
+      "required": true
+    },
+    "precio": {
+      "type": "decimal",
+      "required": true
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "precio_compra": {
+      "type": "decimal"
+    },
+    "marcas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::marca.marca"
+    },
+    "entradas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::entrada.entrada",
+      "mappedBy": "productos"
+    },
+    "porcentaje_ganancia": {
+      "type": "integer",
+      "required": true
+    },
+    "salidas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::salida.salida",
+      "mappedBy": "productos"
+    }
+  }
+}
